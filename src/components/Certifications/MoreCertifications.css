@@ -1,0 +1,73 @@
+#more-certifications {
+    padding: 60px 20px;
+    background-color: #000;
+}
+
+.section-title {
+    position: relative;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #ffbf00;
+    overflow: hidden;
+}
+
+.back-button {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid #ffbf00;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #ffbf00;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+.back-button:hover {
+    background: #ffbf00;
+    box-shadow: 0 0 30px 5px #ffbf00;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    color: #fff;
+}
+
+.more-certification-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.more-certification-item {
+    width: 400px;
+    padding: 0;
+    text-align: center;
+    border-radius: 0;
+    background-color: transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.more-certification-item:hover {
+    transform: scale(1.03);
+    box-shadow: none;
+}
+
+.more-certification-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}

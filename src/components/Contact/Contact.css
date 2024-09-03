@@ -1,0 +1,41 @@
+.contact {
+    padding: 60px 20px;
+    background-color: #000;
+    color: #ffbf00;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #ffbf00;
+    text-align: center;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #ffbf00;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-link:hover {
+    transform: scale(1.1);
+    color: #fff;
+}
+
+.contact-link svg {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
