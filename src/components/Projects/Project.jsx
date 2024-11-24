@@ -8,6 +8,11 @@ const Projects = () => {
             link: 'https://lets-ask.vercel.app/',
             image: '/assets/Projects/1.png'
         },
+        {
+            name: 'SMA Wahidiyah Samarinda',
+            link: 'https://smawahidiyahsmr.com/',
+            image: '/assets/Projects/2.png'
+        },
     ];
 
     return (

@@ -76,6 +76,7 @@
 .hero-button.primary:hover {
     background-color: #e6a700;
     transform: translateY(-5px);
+    color: #fff;
 }
 
 .hero-button.secondary {
