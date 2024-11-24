@@ -17,7 +17,7 @@ const AboutMe = () => {
                 </p>
             </div>
             <div className="about-image" data-aos="fade-left">
-                <img src="/src/assets/me.jpg" alt="Profile" />
+                <img src="/assets/me.jpg" alt="Profile" />
             </div>
         </section>
     );
