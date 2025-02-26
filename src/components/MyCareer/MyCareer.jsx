@@ -22,6 +22,12 @@ const MyCareer = () => {
       period: 'Feb 2023 - Now',
       description: 'Participated in organization Information Systems (INFORSA).',
     },
+    {
+      company: 'BEM KM Unmul',
+      role: 'Organization',
+      period: 'Nov 2024 - Now',
+      description: 'Participated in organization University of Mulawarman (BEM KM Unmul).',
+    },
   ];
 
   return (
