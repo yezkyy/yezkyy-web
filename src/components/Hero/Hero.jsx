@@ -8,7 +8,7 @@ const Hero = () => {
             <div className="hero-background"></div>
             <div className="hero-overlay"></div>
             <div className="hero-content">
-                <h1 className="hero-title">Welcome to My Portfolio</h1>
+                <h1 className="hero-title">Test Halo Halo</h1>
                 <p className="hero-subtitle">I am Rizky, an Information Systems student and Network Engineering, Contact me with any questions.</p>
                 <div className="hero-buttons">
                     <a href="#about" className="hero-button primary">
