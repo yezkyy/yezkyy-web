@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Cursor from './components/Cursor/Cursor';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
@@ -19,6 +20,7 @@ const App = () => {
 
     return (
         <div>
+            <Cursor />
             <Navbar />
             <Hero />
             <About />
