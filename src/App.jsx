@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Navbar from './components/navbar/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
 import MySkills from './components/MySkills/MySkills';
