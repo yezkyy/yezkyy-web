@@ -9,17 +9,18 @@ body, * {
     pointer-events: none;
     transform: translate(-50%, -50%);
     transition: transform 0.1s ease-out;
-    mix-blend-mode: difference;
     z-index: 9999;
 }
 
-/* Lingkaran utama */
+/* Efek glow & warna gradasi */
 .cursor-main {
     width: 12px;
     height: 12px;
-    background: linear-gradient(45deg, #ff007a, #ffcc00);
+    background: linear-gradient(45deg, #00ffcc, #ff00ff);
     border-radius: 50%;
-    transition: width 0.2s ease, height 0.2s ease, background 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.8), 0 0 20px rgba(255, 0, 255, 0.8);
+    transition: width 0.2s ease, height 0.2s ease, background 0.3s ease, transform 0.1s ease-out;
+    animation: pulse 1.5s infinite alternate ease-in-out;
 }
 
 /* Efek hover */
@@ -28,6 +29,14 @@ body, * {
     height: 40px;
     background: rgba(255, 255, 255, 0.2);
     border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+/* Efek klik */
+.cursor-click {
+    transform: translate(-50%, -50%) scale(0.8);
+    background: #ff0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
 }
 
 /* Bayangan trailing */
@@ -35,7 +44,20 @@ body, * {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0) 80%);
+    background: radial-gradient(circle, rgba(0, 255, 204, 0.3) 0%, rgba(255, 0, 255, 0) 80%);
     transition: transform 0.2s ease-out;
-    opacity: 0.7;
+    opacity: 0.6;
+    filter: blur(8px);
+}
+
+/* Animasi efek pulse */
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(0, 255, 204, 0.8), 0 0 20px rgba(255, 0, 255, 0.8);
+    }
+    to {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px rgba(0, 255, 204, 1), 0 0 25px rgba(255, 0, 255, 1);
+    }
 }
