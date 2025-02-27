@@ -6,10 +6,21 @@ const Cursor = () => {
     const [trailingPosition, setTrailingPosition] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
     const [isClicking, setIsClicking] = useState(false);
+    const [particles, setParticles] = useState([]);
 
     useEffect(() => {
         const moveCursor = (e) => {
             setPosition({ x: e.clientX, y: e.clientY });
+
+            // Efek partikel
+            setParticles((prev) => [
+                ...prev,
+                { x: e.clientX, y: e.clientY, id: Math.random() },
+            ]);
+
+            setTimeout(() => {
+                setParticles((prev) => prev.slice(1));
+            }, 500);
         };
 
         window.addEventListener("mousemove", moveCursor);
@@ -58,6 +69,13 @@ const Cursor = () => {
 
     return (
         <>
+            {particles.map((particle) => (
+                <div
+                    key={particle.id}
+                    className="cursor-particle"
+                    style={{ left: `${particle.x}px`, top: `${particle.y}px` }}
+                />
+            ))}
             <div
                 className={`cursor cursor-main ${isHovering ? "cursor-hover" : ""} ${isClicking ? "cursor-click" : ""}`}
                 style={{ left: `${position.x}px`, top: `${position.y}px` }}
