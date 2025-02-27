@@ -9,7 +9,7 @@ const Hero = () => {
             <div className="hero-overlay"></div>
             <div className="hero-content">
                 <h1 className="hero-title">Welcome to My Portfolio</h1>
-                <p className="hero-subtitle">I am Rizky, an Information Systems student and Network Engineering, Contact me with any questions.</p>
+                <p className="hero-subtitle">I am Rizky, an Information Systems student and Fullstack Developer, Contact me with any questions.</p>
                 <div className="hero-buttons">
                     <a href="#about" className="hero-button primary">
                         More About Me
