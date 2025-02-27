@@ -3,6 +3,7 @@ import "./Cursor.css";
 
 const Cursor = () => {
     const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [trailingPosition, setTrailingPosition] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
 
     useEffect(() => {
@@ -15,6 +16,17 @@ const Cursor = () => {
             window.removeEventListener("mousemove", moveCursor);
         };
     }, []);
+
+    useEffect(() => {
+        const smoothTrail = setInterval(() => {
+            setTrailingPosition((prev) => ({
+                x: prev.x + (position.x - prev.x) * 0.15,
+                y: prev.y + (position.y - prev.y) * 0.15,
+            }));
+        }, 10);
+
+        return () => clearInterval(smoothTrail);
+    }, [position]);
 
     useEffect(() => {
         const interactiveElements = document.querySelectorAll("a, button, .hover-target");
@@ -33,10 +45,16 @@ const Cursor = () => {
     }, []);
 
     return (
-        <div
-            className={`cursor ${isHovering ? "cursor-hover" : ""}`}
-            style={{ left: `${position.x}px`, top: `${position.y}px` }}
-        />
+        <>
+            <div
+                className={`cursor cursor-main ${isHovering ? "cursor-hover" : ""}`}
+                style={{ left: `${position.x}px`, top: `${position.y}px` }}
+            />
+            <div
+                className={`cursor cursor-trail`}
+                style={{ left: `${trailingPosition.x}px`, top: `${trailingPosition.y}px` }}
+            />
+        </>
     );
 };
 
