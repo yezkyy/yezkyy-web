@@ -6,18 +6,16 @@ const Cursor = () => {
     const [trailingPosition, setTrailingPosition] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
     const [isClicking, setIsClicking] = useState(false);
+    const [hoverColor, setHoverColor] = useState("");
     const [particles, setParticles] = useState([]);
 
     useEffect(() => {
         const moveCursor = (e) => {
             setPosition({ x: e.clientX, y: e.clientY });
-
-            // Efek partikel
             setParticles((prev) => [
                 ...prev,
                 { x: e.clientX, y: e.clientY, id: Math.random() },
             ]);
-
             setTimeout(() => {
                 setParticles((prev) => prev.slice(1));
             }, 500);
@@ -30,20 +28,24 @@ const Cursor = () => {
     useEffect(() => {
         const smoothTrail = setInterval(() => {
             setTrailingPosition((prev) => ({
-                x: prev.x + (position.x - prev.x) * 0.2,
-                y: prev.y + (position.y - prev.y) * 0.2,
+                x: prev.x + (position.x - prev.x) * 0.15,
+                y: prev.y + (position.y - prev.y) * 0.15,
             }));
         }, 10);
-
         return () => clearInterval(smoothTrail);
     }, [position]);
 
     useEffect(() => {
         const interactiveElements = document.querySelectorAll("a, button, .hover-target");
-
         interactiveElements.forEach((el) => {
-            el.addEventListener("mouseenter", () => setIsHovering(true));
-            el.addEventListener("mouseleave", () => setIsHovering(false));
+            el.addEventListener("mouseenter", () => {
+                setIsHovering(true);
+                setHoverColor(el.getAttribute("data-cursor-color") || "");
+            });
+            el.addEventListener("mouseleave", () => {
+                setIsHovering(false);
+                setHoverColor("");
+            });
         });
 
         return () => {
@@ -78,7 +80,7 @@ const Cursor = () => {
             ))}
             <div
                 className={`cursor cursor-main ${isHovering ? "cursor-hover" : ""} ${isClicking ? "cursor-click" : ""}`}
-                style={{ left: `${position.x}px`, top: `${position.y}px` }}
+                style={{ left: `${position.x}px`, top: `${position.y}px`, backgroundColor: hoverColor || "" }}
             />
             <div
                 className="cursor cursor-trail"
