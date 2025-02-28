@@ -14,11 +14,11 @@ const Cursor = () => {
             setPosition({ x: e.clientX, y: e.clientY });
             setParticles((prev) => [
                 ...prev,
-                { x: e.clientX, y: e.clientY, id: Math.random() },
+                { x: e.clientX, y: e.clientY, id: Math.random(), opacity: 1 },
             ]);
             setTimeout(() => {
                 setParticles((prev) => prev.slice(1));
-            }, 500);
+            }, 700);
         };
 
         window.addEventListener("mousemove", moveCursor);
@@ -28,8 +28,8 @@ const Cursor = () => {
     useEffect(() => {
         const smoothTrail = setInterval(() => {
             setTrailingPosition((prev) => ({
-                x: prev.x + (position.x - prev.x) * 0.15,
-                y: prev.y + (position.y - prev.y) * 0.15,
+                x: prev.x + (position.x - prev.x) * 0.1,
+                y: prev.y + (position.y - prev.y) * 0.1,
             }));
         }, 10);
         return () => clearInterval(smoothTrail);
@@ -75,7 +75,7 @@ const Cursor = () => {
                 <div
                     key={particle.id}
                     className="cursor-particle"
-                    style={{ left: `${particle.x}px`, top: `${particle.y}px` }}
+                    style={{ left: `${particle.x}px`, top: `${particle.y}px`, opacity: particle.opacity }}
                 />
             ))}
             <div
