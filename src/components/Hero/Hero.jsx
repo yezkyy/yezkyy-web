@@ -13,7 +13,7 @@ const Hero = () => {
 
     return (
         <section className="hero">
-            {bgLoaded && <div className="hero-background"></div>}
+            <div className="hero-background"></div>
             <div className="hero-overlay"></div>
             <div className="hero-content">
                 <h1 className="hero-title">Welcome to My Portfolio</h1>
