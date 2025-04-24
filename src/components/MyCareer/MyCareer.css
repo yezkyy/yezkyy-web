@@ -1,159 +1,79 @@
-/* src/components/MyCareer.css */
-
 .my-career-section {
-    padding: 80px 20px;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
+  padding: 80px 20px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.my-career-section h2 {
+  font-size: 3rem;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 20px;
+  display: inline-block;
+}
+
+.career-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.career-card {
+  background-color: #1a1a1a;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  position: relative;
+}
+
+.career-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(243, 156, 18, 0.5);
+}
+
+.career-role {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.career-company {
+  font-size: 1.2rem;
+  color: #f39c12;
+  margin-bottom: 10px;
+}
+
+.career-period {
+  font-size: 0.95rem;
+  color: #999;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.career-description {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .my-career-section {
+    padding: 60px 10px;
   }
-  
+
+  .career-card {
+    padding: 20px;
+  }
+
   .my-career-section h2 {
-    font-size: 3rem;
-    margin-bottom: 60px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    position: relative;
-    z-index: 1;
-    padding-bottom: 20px;
-    display: inline-block;
+    font-size: 2.2rem;
   }
-  
-  .timeline {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .timeline::before {
-    content: '';
-    position: absolute;
-    width: 4px;
-    background-color: #f39c12;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-  }
-  
-  .timeline-item {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    position: relative;
-    width: 50%;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  .timeline-item:nth-child(odd) {
-    left: 0;
-  }
-  
-  .timeline-item:nth-child(even) {
-    left: 50%;
-    justify-content: flex-end;
-  }
-  
-  .timeline-item::after {
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: calc(50% - 2px);
-    width: 4px;
-    height: 100%;
-    background-color: #f39c12;
-    z-index: -1;
-  }
-  
-  .timeline-icon {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-  }
-  
-  .timeline-icon .dot {
-    width: 20px;
-    height: 20px;
-    background-color: #f39c12;
-    border-radius: 50%;
-    display: inline-block;
-    box-shadow: 0 0 10px #f39c12;
-    animation: pulse 1.5s infinite;
-  }
-  
-  .timeline-content {
-    background-color: #222;
-    padding: 20px;
-    border-radius: 6px;
-    position: relative;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    max-width: 500px;
-    z-index: 2;
-  }
-  
-  .timeline-content h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  }
-  
-  .timeline-content h4 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    color: #f39c12;
-  }
-  
-  .timeline-period {
-    font-size: 1.1rem;
-    color: #999;
-    margin-bottom: 15px;
-    display: block;
-  }
-  
-  .timeline-content p {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  
-  /* Animasi pulse untuk dot */
-  @keyframes pulse {
-    0% {
-      box-shadow: 0 0 10px #f39c12, 0 0 20px #f39c12, 0 0 30px #f39c12;
-    }
-    50% {
-      box-shadow: 0 0 15px #f39c12, 0 0 30px #f39c12, 0 0 45px #f39c12;
-    }
-    100% {
-      box-shadow: 0 0 10px #f39c12, 0 0 20px #f39c12, 0 0 30px #f39c12;
-    }
-  }
-  
-  /* Responsiveness */
-  @media (max-width: 768px) {
-    .timeline-item {
-      width: 100%;
-      left: 0 !important;
-      padding-left: 40px;
-    }
-  
-    .timeline-item:nth-child(even) {
-      justify-content: flex-start;
-      padding-left: 40px;
-    }
-  
-    .timeline::before {
-      left: 40px;
-    }
-  
-    .timeline-icon {
-      left: 40px;
-      transform: none;
-    }
-  
-    .timeline-content {
-      max-width: 100%;
-    }
-  }  
+}
