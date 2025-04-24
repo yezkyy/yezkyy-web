@@ -7,9 +7,9 @@ const Hero = () => {
 
     useEffect(() => {
         const img = new Image();
-        img.src = './assets/bg.png';
+        img.src = process.env.PUBLIC_URL + '/assets/bg.png';
         img.onload = () => setBgLoaded(true);
-    }, []);
+    }, []);    
 
     return (
         <section className="hero">
