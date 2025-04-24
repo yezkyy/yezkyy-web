@@ -23,6 +23,10 @@ const certificationsData = {
         { name: 'Coursera Google Python', image: '/assets/ml/2.JPG' },
         { name: 'Memulai Pemograman dengan Python', image: '/assets/ml/3.png' },
     ],
+    Database: [
+        { name: 'My Certifications Database', image: '/assets/database/1.png' },
+        { name: 'Oracle Database Progamming with SQL ', image: '/assets/database/2.png' },
+    ],
 };
 
 const Certifications = () => {
