@@ -1,16 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Hero.css';
 import { FaArrowDown } from 'react-icons/fa';
 
 const Hero = () => {
-    const [bgLoaded, setBgLoaded] = useState(false);
-
-    useEffect(() => {
-        const img = new Image();
-        img.src = process.env.PUBLIC_URL + '/assets/bg.png';
-        img.onload = () => setBgLoaded(true);
-    }, []);    
-
     return (
         <section className="hero">
             <div className="hero-background"></div>
