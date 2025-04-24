@@ -1,3 +1,4 @@
+/* About Section */
 .about-me {
     display: flex;
     align-items: center;
@@ -6,6 +7,7 @@
     background-color: #000;
     color: #333;
     flex-wrap: wrap;
+    gap: 20px; /* Menambah jarak antar elemen */
 }
 
 .about-content {
@@ -95,4 +97,40 @@
 [data-aos="fade-left"].aos-animate {
     opacity: 1;
     transform: translateX(0);
+}
+
+/* Responsiveness for Mobile (Max-width: 768px) */
+@media (max-width: 768px) {
+    .about-me {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 40px 10px;
+    }
+
+    .about-content {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .about-title {
+        font-size: 2.5rem; /* Reduce font size for mobile */
+        margin-bottom: 15px;
+    }
+
+    .about-description {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .about-image {
+        max-width: 100%;
+        padding: 10px;
+        justify-content: center;
+    }
+
+    .about-image img {
+        max-width: 90%; /* Reduce the image width for mobile */
+        height: auto;
+    }
 }
