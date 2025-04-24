@@ -13,6 +13,11 @@ const Projects = () => {
             link: 'https://smawahidiyahsmr.com/',
             image: '/assets/Projects/2.png'
         },
+        {
+            name: 'E-Commerce Gentlemen88',
+            link: 'https://gentlemen88.com/',
+            image: '/assets/Projects/3.png'
+        },
     ];
 
     return (
