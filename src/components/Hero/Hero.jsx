@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Hero.css';
 import { FaArrowDown } from 'react-icons/fa';
 
 const Hero = () => {
+    const [bgLoaded, setBgLoaded] = useState(false);
+
+    useEffect(() => {
+        const img = new Image();
+        img.src = './assets/bg.png';
+        img.onload = () => setBgLoaded(true);
+    }, []);
+
     return (
         <section className="hero">
-            <div className="hero-background"></div>
+            {bgLoaded && <div className="hero-background"></div>}
             <div className="hero-overlay"></div>
             <div className="hero-content">
                 <h1 className="hero-title">Welcome to My Portfolio</h1>
